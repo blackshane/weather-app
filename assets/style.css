@@ -1,0 +1,45 @@
+.gradient-custom {
+  
+    background: #ffffff;
+  
+    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+    
+    
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1))
+    }
+    
+    .carousel-indicators li {
+    background-color: #282828;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    }
+
+    header {
+        width: 100%;
+        background-color: rgb(87, 56, 190);
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        text-align: center;   
+    }
+
+    aside {
+        height: 600px;
+        width: 30%;
+        max-width: 300px;
+        min-width: 100px;
+        float: left;
+        margin-right: 20px;
+        background-color: azure;
+    
+        
+    }
+.city-search-block {
+    border-width: 30px;
+    border:black;
+    border-radius: 10px;
+    padding: 10px;
+}
