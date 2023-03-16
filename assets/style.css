@@ -17,7 +17,9 @@
 
     header {
         width: 100%;
-        background-color: rgb(87, 56, 190);
+        background:  rgb(127, 108, 188);
+          background: -webkit-linear-gradient(to right, rgb(126, 125, 196), rgb(69, 36, 181));
+        background: linear-gradient(to right, rgb(126, 125, 196), rgb(69, 36, 181));
         color: white;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: bold;
@@ -26,7 +28,7 @@
         text-align: center;   
     }
 
-    aside {
+aside {
         height: 600px;
         width: 30%;
         max-width: 300px;
@@ -42,4 +44,6 @@
     border:black;
     border-radius: 10px;
     padding: 10px;
+    text-align: center;
 }
+
