@@ -22,7 +22,7 @@
                     <div class="city-search">
                         <h2 class="city-search-block">Search for a City: </h2>
                         <div class="search-box">
-                            <input type="search"  class="search-bar" id="city-search">
+                            <input type="text" class="search-bar" id="city-search">
                             <button class="btn" id="search-btn">Search</button>
                         </div>
                     </div>
@@ -47,12 +47,19 @@
                                         <div class="carousel-item active">
                                             <div class="d-flex justify-content-between mb-4 pb-2">
                                                 <div>
+                                                    <p class="text-muted mb-0" id="location">Coimbra, Portugal</p>
+                                                    <p id="current-date">date</p>
                                                     <h2 class="display-2" id="current-temp"><strong>23°C</strong></h2>
                                                     <p id="current-sun"></p>
-                                                    <p class="text-muted mb-0" id="location">Coimbra, Portugal</p>
+                                                    <p id="current-humid">humid</p>
+                                                    <p id="current-wind-speed">wind</p>
+
+
                                                 </div>
                                                 <div>
-                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                                                  
+                                                    <img id="current-icon"
+                                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
                                                         width="100%">
                                                 </div>
                                             </div>
@@ -83,33 +90,59 @@
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2">
                                         <div class="flex-column">
-                                            <p class="small" id="next-day-forecast"><strong>21°C</strong></p>
-                                            <p id="tomorrow-sun"></p>
+                                            <p id="tomorrow-date">date</p>
+                                            <p class="small" id="next-day-temp"><strong>21°C</strong></p>
+                                            <p id="tomorrow-sun">sunny</p>
+                                                <img class="small-icon" id="tomorrow-icon" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                                                       ></img>
                                             <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
-                                            <p class="mb-0" ><strong>1-Day</strong></p>
+
+                                            <p id="tomorrow-humid">humid</p>
+                                            <p id="tomorrow-wind">wind</p>
+                                            <p class="mb-0"><strong>1-Day</strong></p>
                                         </div>
                                         <div class="flex-column">
-                                            <p class="small" id="two-day-forecast"><strong>20°C</strong></p>
-                                            <p id="two-day-sun"></p>
+                                            <p id="two-day-date">date</p>
+                                            <p class="small" id="two-day-temp"><strong>20°C</strong></p>
+                                            <p id="two-day-sun">sunny</p>
+                                            <img class="small-icon" id="two-day-icon" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                                            ></img>
                                             <i class="fas fa-sun fa-2x mb-3" style="color: #ddd;"></i>
-                                            <p class="mb-0" ><strong>2-Day</strong></p>
+                                            <p id="two-day-humid">humid</p>
+                                            <p id="two-day-wind">wind</p>
+                                            <p class="mb-0"><strong>2-Day</strong></p>
                                         </div>
                                         <div class="flex-column">
-                                            <p class="small" id="three-day-forecast"><strong>16°C</strong></p>
-                                            <p id="three-day-sun"></p>
+                                            <p id="three-day-date">date</p>
+                                            <p class="small" id="three-day-temp"><strong>16°C</strong></p>
+                                            <p id="three-day-sun">sunny</p>
+                                            <img class="small-icon" id="three-day-icon" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                                            ></img>
                                             <i class="fas fa-cloud fa-2x mb-3" style="color: #ddd;"></i>
+                                            <p id="three-day-humid">humid</p>
+                                            <p id="three-day-wind">wind</p>
                                             <p class="mb-0"><strong>3-Day</strong></p>
                                         </div>
                                         <div class="flex-column">
-                                            <p class="small" id="four-day-forecast"><strong>17°C</strong></p>
-                                            <p id="four-day-sun"></p>
+                                            <p id="four-day-date">date</p>
+                                            <p class="small" id="four-day-temp"><strong>17°C</strong></p>
+                                            <p id="four-day-sun">sunny</p>
+                                            <img class="small-icon" id="four-day-icon" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                                            ></img>
                                             <i class="fas fa-cloud fa-2x mb-3" style="color: #ddd;"></i>
+                                            <p id="four-day-humid">humid</p>
+                                            <p id="four-day-wind">wind</p>
                                             <p class="mb-0"><strong>4-Day</strong></p>
                                         </div>
                                         <div class="flex-column">
-                                            <p class="small" id="five-day-forecast"><strong>18°C</strong></p>
-                                            <p id="five-day-sun"></p>
+                                            <p id="five-day-date">date</p>
+                                            <p class="small" id="five-day-temp"><strong>18°C</strong></p>
+                                            <p id="five-day-sun">sunny</p>
+                                            <img class="small-icon" id="five-day-icon" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                                            ></img>
                                             <i class="fas fa-cloud-showers-heavy fa-2x mb-3" style="color: #ddd;"></i>
+                                            <p id="five-day-humid">humid</p>
+                                            <p id="five-day-wind">wind</p>
                                             <p class="mb-0"><strong>5-Day</strong></p>
                                         </div>
                                     </div>
