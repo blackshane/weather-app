@@ -4,9 +4,37 @@ var searchButton = document.getElementById('search-btn');
 var weatherByCoorURL = 'http://api.openweathermap.org/data/2.5/forecast?lat=38.81&lon=-90.69&units=imperial&appid=' + APIkey 
 var locationByName ='http://api.openweathermap.org/geo/1.0/direct?q=O\'Fallon,MO,&limit=5&appid=' + APIkey
 var searchBarCity = document.getElementById('search');
-
+var savedCities = document.querySelector('saved-cities')
 
 searchButton.addEventListener('click', getDataFromSearch); 
+searchButton.addEventListener('click', saveLastCity)
+// searchButton.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     var cityVal = city.value;
+//     localStorage.setItem('city', cityVal);
+
+// })
+
+// function displayCities(type, lastCity){
+//     savedCities.textContent = lastCity;
+//     savedCities.setAttribute("class", type);
+// }
+//displayCities()
+
+function saveLastCity() {
+    var lastCity = city.value;
+    localStorage.setItem('lastCity', JSON.stringify(lastCity))
+}
+
+function renderLastCity() {
+    var lastCitySaved = JSON.parse(localStorage.getItem('lastCity'));
+    if (lastCitySaved !== null) {
+        document.getElementById("saved-cities").innerHTML = lastCitySaved;
+    } else {
+        return;
+    }
+}
+renderLastCity()
 
 function getDataFromSearch() {
    
@@ -62,47 +90,7 @@ function getDataFromSearch() {
                     document.getElementById('four-day-sun').textContent = fourDayForecast;
                     document.getElementById('five-day-sun').textContent = fiveDayForecast;
 
-                   if (currentForecast === 'Clear') {
-                    currentForecast.textContent = currentForecast + "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp";
-
-                     } else if (currentForecast  === 'Clouds') {
-                       currentForecast.textContent = currentForecast + 'https://cdn-icons-png.flaticon.com/512/14/14078.png';
-                        
-                     } //else if (currentForecast === 'Rain') {
-                    //     currentIcon.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgKW7PlV7Wzu6V-t1auS9lv6SdukxnUTQBmi5y3Y0deRhuXyOvHtWihxXzmm4wy8DVXw&usqp=CAU'
-                    // }                    if (currentForecast === 'Clear') {
-                    //     currentIcon.src= "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp";
-
-                    // } else if (currentForecast  === 'Clouds') {
-                    //     currentIcon.src= 'https://cdn-icons-png.flaticon.com/512/14/14078.png';
-                        
-                    // } else if (currentForecast === 'Rain') {
-                    //     currentIcon.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgKW7PlV7Wzu6V-t1auS9lv6SdukxnUTQBmi5y3Y0deRhuXyOvHtWihxXzmm4wy8DVXw&usqp=CAU'
-                    // }                    if (currentForecast === 'Clear') {
-                    //     currentIcon.src= "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp";
-
-                    // } else if (currentForecast  === 'Clouds') {
-                    //     currentIcon.src= 'https://cdn-icons-png.flaticon.com/512/14/14078.png';
-                        
-                    // } else if (currentForecast === 'Rain') {
-                    //     currentIcon.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgKW7PlV7Wzu6V-t1auS9lv6SdukxnUTQBmi5y3Y0deRhuXyOvHtWihxXzmm4wy8DVXw&usqp=CAU'
-                    // }                    if (currentForecast === 'Clear') {
-                    //     currentIcon.src= "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp";
-
-                    // } else if (currentForecast  === 'Clouds') {
-                    //     currentIcon.src= 'https://cdn-icons-png.flaticon.com/512/14/14078.png';
-                        
-                    // } else if (currentForecast === 'Rain') {
-                    //     currentIcon.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgKW7PlV7Wzu6V-t1auS9lv6SdukxnUTQBmi5y3Y0deRhuXyOvHtWihxXzmm4wy8DVXw&usqp=CAU'
-                    // }                    if (currentForecast === 'Clear') {
-                    //     currentIcon.src= "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp";
-
-                    // } else if (currentForecast  === 'Clouds') {
-                    //     currentIcon.src= 'https://cdn-icons-png.flaticon.com/512/14/14078.png';
-                        
-                    // } else if (currentForecast === 'Rain') {
-                    //     currentIcon.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdgKW7PlV7Wzu6V-t1auS9lv6SdukxnUTQBmi5y3Y0deRhuXyOvHtWihxXzmm4wy8DVXw&usqp=CAU'
-                    // }
+            
 
                     // DATES
                     var todaysDate = data.list[0].dt_txt;
