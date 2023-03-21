@@ -1,8 +1,8 @@
 var APIkey = '4db82ccb8ba6333d32b8c06c5e939250';
 var city = document.getElementById('city-search');
 var searchButton = document.getElementById('search-btn');
-var weatherByCoorURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=38.81&lon=-90.69&units=imperial&appid=' + APIkey 
-var locationByName ='https://api.openweathermap.org/geo/1.0/direct?q=O\'Fallon,MO,&limit=5&appid=' + APIkey
+var weatherByCoorURL = 'http://api.openweathermap.org/data/2.5/forecast?lat=38.81&lon=-90.69&units=imperial&appid=' + APIkey 
+var locationByName ='http://api.openweathermap.org/geo/1.0/direct?q=O\'Fallon,MO,&limit=5&appid=' + APIkey
 var searchBarCity = document.getElementById('search');
 var searchHistoryList = document.getElementById('saved-cities');
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
 function renderWeatherDataForCity(cityText, saveToHistory) {
 
-    locationByName = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityText + '&limit=5&appid=' + APIkey ;
+    locationByName = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityText + '&limit=5&appid=' + APIkey ;
     function convertToLatAndLon() {
         fetch(locationByName)
         .then(function(response){
@@ -76,7 +76,7 @@ function renderWeatherDataForCity(cityText, saveToHistory) {
 
             const cityLat = data[0].lat;
             const cityLon = data[0].lon;          
-            let weatherByCoorURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + cityLat + '&lon=' + cityLon +'&units=imperial&appid=' + APIkey;
+            let weatherByCoorURL = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + cityLat + '&lon=' + cityLon +'&units=imperial&appid=' + APIkey;
             function runUpdatedLocation(){             
                                        
                 fetch(weatherByCoorURL)
